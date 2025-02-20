@@ -1,14 +1,33 @@
-export const AddTask = () => {
+export const AddTask = ({taskList, setTaskList}) => {
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const date = new Date();
+    const newTask = {
+      id: date.getTime(),
+      time: `${date.toLocaleTimeString()} ${date.toLocaleDateString()}`,
+      name: event.target.task.value,
+      completed: true,
+      priority: "élévé"
+    }
+
+    setTaskList([...taskList, newTask]);
+  }
+
   return (
     <div className="mt-8 grid  place-items-center">
       <div className=" p-6 w-180 ">
-        <form action="">
+        <form onSubmit= {handleSubmit}>
           <div className=" mt-2 ">
             <div className="flex gap-x-4">
             <div className=" flex flex-grow items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-blue-600">
               <input
               placeholder="Add task"
                 type="text"
+                name="task"
+                autoComplete="off"
+                maxLength="30"
                 className="  min-w-0 flex-auto py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
               />
             </div>

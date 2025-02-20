@@ -1,38 +1,15 @@
 import { TaskCard } from "./TaskCard";
 
 
-export const TaskList = () => {
-    const tasks = [
-        {
-            id:1020,
-            name:"Manger",
-            time: "12 janvier 2023 à 13h45min",
-            priority:"Elevé",
-            completed: false,
-        },
-        {
-            id:1021,
-            name:"Se reposer",
-            time: "12 janvier 2023 à 13h45min",
-            priority:"Moyen",
-            completed: false,
-        },
-        {
-            id:1020,
-            name:"Sport",
-            time: "12 janvier 2023 à 13h45min",
-            priority:"Moyen",
-            completed: true,
-        },
-
-    ];
+export const TaskList = ({taskList, setTaskList}) => {
+    
   return (
     <div className="mt-8 shadow-md p-4 bg-gray-50/2">
       <div className="flex justify-between">
         <div>
           <span className="text-2xl font-bold">Todolist</span>
           <span className="ml-4 bg-black px-2 py-1  rounded-sm">
-            <span className="text-white">{tasks.length}</span>
+            <span className="text-white">{taskList.length}</span>
           </span>
         </div>
         <div>
@@ -42,8 +19,8 @@ export const TaskList = () => {
         </div>
       </div>
       <div className="mt-6 grid grid-cols-3 gap-4">
-        {tasks.map((task)=> (
-            <TaskCard task={task} />
+        {taskList.map((task)=> (
+            <TaskCard key={task.id} task={task} />
         ))}
         
       </div>
