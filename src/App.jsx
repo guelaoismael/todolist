@@ -1,13 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Header } from './components/Header'
+import { AddTask } from './components/AddTask'
+import { TaskList } from './components/TaskList'
 import './App.css'
 
 function App() {
 
   return (
     <>
-    <h1 className="text-4xl">Hello world</h1>
+    <Header />
+    <AddTask />
+    <TaskList />
     </>
   )
 }
