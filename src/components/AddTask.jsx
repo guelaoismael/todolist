@@ -28,7 +28,7 @@ export const AddTask = ({ taskList, setTaskList, task, setTask }) => {
       };
 
       setTaskList([...taskList, newTask]);
-     
+
       setTask({});
     }
   };
@@ -45,14 +45,24 @@ export const AddTask = ({ taskList, setTaskList, task, setTask }) => {
                   type="text"
                   name="task"
                   value={task.name || ""}
-                  onChange={e => setTask({...task, name:e.target.value})}
+                  onChange={(e) => setTask({ ...task, name: e.target.value })}
                   autoComplete="off"
                   maxLength="30"
                   className="  min-w-0 flex-auto py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
                 />
               </div>
-              <button className="flex-none rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-green-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700">
-                {task.id ? "Modifier" : "Ajouter" } 
+              <button
+                type="submit"
+                disabled={!task.name?.trim()} 
+                className={`flex-none rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs 
+          ${
+            task.name?.trim()
+              ? "bg-green-700 hover:bg-green-600"
+              : "bg-gray-300 cursor-not-allowed"
+          }
+        `}
+              >
+                {task.id ? "Modifier" : "Ajouter"}
               </button>
             </div>
           </div>
