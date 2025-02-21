@@ -16,7 +16,7 @@ export const TaskList = ({ taskList, setTaskList, task, setTask }) => {
         <div>
           <button
             onClick={clearAll}
-            className="flex-none rounded-md bg-red-500 p-1.5 text-sm font-semibold text-white shadow-xs hover:bg-red-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
+            className="flex-none rounded-md bg-red-700 p-1.5 text-sm font-semibold text-white shadow-xs hover:bg-red-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700"
           >
             Tout Supprimer
           </button>

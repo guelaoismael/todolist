@@ -51,8 +51,8 @@ export const AddTask = ({ taskList, setTaskList, task, setTask }) => {
                   className="  min-w-0 flex-auto py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
                 />
               </div>
-              <button className="flex-none rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500">
-                Ajouter
+              <button className="flex-none rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-green-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700">
+                {task.id ? "Modifier" : "Ajouter" } 
               </button>
             </div>
           </div>

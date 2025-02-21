@@ -18,8 +18,8 @@ export const TaskCard = ({ tsk, taskList, setTaskList, task, setTask }) => {
     <div
       className={`bg-white rounded-md p-2 border ${
         tsk.completed
-          ? "border-gray-200 shadow-md shadow-green-300"
-          : "border-gray-200 shadow-md shadow-red-300"
+          ? "border-gray-200 shadow-md shadow-green-700"
+          : "border-gray-200 shadow-md shadow-red-900"
       }`}
     >
       <div>
@@ -30,12 +30,12 @@ export const TaskCard = ({ tsk, taskList, setTaskList, task, setTask }) => {
               <Pencil
                 size={20}
                 onClick={()=>handleEdit(tsk.id)}
-                className="text-green-950 hover:text-blue-800 cursor-pointer"
+                className="text-green-700 hover:text-blue-800 cursor-pointer"
               />
               <Trash2
                 size={20}
                 onClick={()=>handleDelete(tsk.id)}
-                className="text-red-500 hover:text-blue-800 cursor-pointer"
+                className="text-red-800 hover:text-blue-800 cursor-pointer"
               />
             </span>
           </span>
